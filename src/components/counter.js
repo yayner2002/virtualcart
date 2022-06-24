@@ -2,14 +2,13 @@ import React, { Component } from "react";
 
 class Counter extends Component {
   state = {
-    value: this.props.value
+    value: this.props.counter.value
   };
 // constructor () {
 //   super()
 //   this.handleInc = this.handleInc.bind(this)
 // } manually bind event handlers with out arrow functions
-handleInc = (id) =>  {
-  console.log(id) 
+handleInc = () =>  {
   this.setState( { value: this.state.value + 1})
 }
   formatCount() {
@@ -18,14 +17,13 @@ handleInc = (id) =>  {
   }
 
   render() {
-    console.log(this.props)
     return (
        <div>
        <span className= {this.getBadgeClasses()}>{this.formatCount()}</span>
-        <button className="btn btn-secondary btn-sm" onClick={() => this.handleInc(1)}>
+        <button className="btn btn-secondary btn-sm" onClick={this.handleInc}>
           Increment
         </button>
-        <button className="btn btn-danger m-2 btn-sm" onClick={this.props.onDelete}>Delete</button>
+        <button className="btn btn-danger m-2 btn-sm" onClick={() => this.props.onDelete(this.props.counter.id)}>Delete</button>
        </div>
     );
   }
