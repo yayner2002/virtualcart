@@ -10,17 +10,17 @@ class Counter extends Component {
 //   this.handleInc = this.handleInc.bind(this)
 // } manually bind event handlers with out arrow functions
 handleInc = (id) =>  {
-  console.log(id)
+  console.log(id) 
   this.setState( { count: this.state.count + 1})
 }
   formatCount() {
     const { count } = this.state;
     return count === 0 ? "zero" : count;
   }
-  conditionalRendering() {
-    if(this.state.items.length === 0) return <p>No Items to display</p>
-    return <ul>{this.state.items.map(listItem => <li key={listItem}>{listItem}</li>)}</ul>
-  }
+  // conditionalRendering() {
+  //   if(this.state.items.length === 0) return <p>No Items to display</p>
+  //   return <ul>{this.state.items.map(listItem => <li key={listItem}>{listItem}</li>)}</ul>
+  // }
 
   render() {
 
@@ -31,8 +31,8 @@ handleInc = (id) =>  {
           Increment
         </button>
         <div>
-          {this.state.items.length === 0 && "Please Add new items"}
-          {this.conditionalRendering()}
+          {/* {this.state.items.length === 0 && "Please Add new items"}
+          {this.conditionalRendering()} */}
         </div>
       </React.Fragment>
     );
