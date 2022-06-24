@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 class Counter extends Component {
   state = {
-    count: 10,
+    count: 0,
     items: ['item 1', 'item 2', 'item 3', 'item 4']
   };
 // constructor () {
@@ -10,7 +10,7 @@ class Counter extends Component {
 //   this.handleInc = this.handleInc.bind(this)
 // } manually bind event handlers with out arrow functions
 handleInc = () =>  {
-  console.log("button clicked,", this)
+  this.setState( { count: this.state.count + 1})
 }
   formatCount() {
     const { count } = this.state;
