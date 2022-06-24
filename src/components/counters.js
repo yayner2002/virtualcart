@@ -27,7 +27,7 @@ class Counters extends Component {
     const indexOfItemTOInc = items.indexOf(counter);
     items[indexOfItemTOInc] = { ...counter };
     items[indexOfItemTOInc].value++;
-    this.setState({ items: items });
+    this.setState({ items });
   };
   handleReset = () => {
     const items = this.state.items.map((item) => {
