@@ -2,8 +2,7 @@ import React, { Component } from "react";
 
 class Counter extends Component {
   state = {
-    count: 0,
-    items: ['item 1', 'item 2', 'item 3', 'item 4']
+    value: this.props.value
   };
 // constructor () {
 //   super()
@@ -11,11 +10,11 @@ class Counter extends Component {
 // } manually bind event handlers with out arrow functions
 handleInc = (id) =>  {
   console.log(id) 
-  this.setState( { count: this.state.count + 1})
+  this.setState( { value: this.state.value + 1})
 }
   formatCount() {
-    const { count } = this.state;
-    return count === 0 ? "zero" : count;
+    const { value } = this.state;
+    return value === 0 ? "zero" : value;
   }
   // conditionalRendering() {
   //   if(this.state.items.length === 0) return <p>No Items to display</p>
@@ -41,7 +40,7 @@ handleInc = (id) =>  {
 
   getBadgeClasses() {
     let classes = "badge m-2 bg-";
-    classes += (this.state.count === 0) ? "warning" : "primary";
+    classes += (this.state.value === 0) ? "warning" : "primary";
     return classes;
   }
 }
