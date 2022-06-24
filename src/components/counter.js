@@ -16,24 +16,17 @@ handleInc = (id) =>  {
     const { value } = this.state;
     return value === 0 ? "zero" : value;
   }
-  // conditionalRendering() {
-  //   if(this.state.items.length === 0) return <p>No Items to display</p>
-  //   return <ul>{this.state.items.map(listItem => <li key={listItem}>{listItem}</li>)}</ul>
-  // }
 
   render() {
-
+    console.log(this.props)
     return (
-      <React.Fragment>
-        <span className= {this.getBadgeClasses()}>{this.formatCount()}</span>
+       <div>
+       <span className= {this.getBadgeClasses()}>{this.formatCount()}</span>
         <button className="btn btn-secondary btn-sm" onClick={() => this.handleInc(1)}>
           Increment
         </button>
-        <div>
-          {/* {this.state.items.length === 0 && "Please Add new items"}
-          {this.conditionalRendering()} */}
-        </div>
-      </React.Fragment>
+        <button className="btn btn-danger m-2 btn-sm" onClick={this.props.onDelete}>Delete</button>
+       </div>
     );
   }
 
