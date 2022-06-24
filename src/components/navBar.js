@@ -1,17 +1,15 @@
-import React, { Component } from "react";
+import React from "react";
 
-class NavBar extends Component {
-  render() {
-    return (
-      <nav class="navbar bg-light">
+const NavBar = (props) => {
+    return ( 
+        <nav class="navbar bg-light">
         <div class="container-fluid">
           <a class="navbar-brand" href="https://google.com">
-            Navbar <span className="badge bg-secondary rounded-pill m-2">{this.props.totalNumOfItems}</span>
+            Navbar <span className="badge bg-secondary rounded-pill m-2">{props.totalNumOfItems}</span>
           </a>
         </div>
       </nav>
-    );
-  }
+     );
 }
-
+ 
 export default NavBar;
