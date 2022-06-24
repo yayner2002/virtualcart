@@ -9,7 +9,8 @@ class Counter extends Component {
 //   super()
 //   this.handleInc = this.handleInc.bind(this)
 // } manually bind event handlers with out arrow functions
-handleInc = () =>  {
+handleInc = (id) =>  {
+  console.log(id)
   this.setState( { count: this.state.count + 1})
 }
   formatCount() {
@@ -26,7 +27,7 @@ handleInc = () =>  {
     return (
       <React.Fragment>
         <span className= {this.getBadgeClasses()}>{this.formatCount()}</span>
-        <button className="btn btn-secondary btn-sm" onClick={this.handleInc}>
+        <button className="btn btn-secondary btn-sm" onClick={() => this.handleInc(1)}>
           Increment
         </button>
         <div>
