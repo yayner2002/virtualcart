@@ -5,7 +5,13 @@ class Counter extends Component {
     count: 10,
     items: ['item 1', 'item 2', 'item 3', 'item 4']
   };
-
+// constructor () {
+//   super()
+//   this.handleInc = this.handleInc.bind(this)
+// } manually bind event handlers with out arrow functions
+handleInc = () =>  {
+  console.log("button clicked,", this)
+}
   formatCount() {
     const { count } = this.state;
     return count === 0 ? "zero" : count;
@@ -13,9 +19,6 @@ class Counter extends Component {
   conditionalRendering() {
     if(this.state.items.length === 0) return <p>No Items to display</p>
     return <ul>{this.state.items.map(listItem => <li key={listItem}>{listItem}</li>)}</ul>
-  }
-  handleInc() {
-    console.log('button Clicked', this)
   }
 
   render() {
