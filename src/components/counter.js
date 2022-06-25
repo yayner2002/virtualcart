@@ -7,8 +7,10 @@ class Counter extends Component {
     if(prevProps.item.value !== this.props.item.value){
       // ajax call and get  new data from the server
     }
-
-
+  }
+  componentWillUnmount(){
+    console.log("item - unmount");
+    // this method is called before the item/componnet is removed
   }
 // constructor () {
 //   super()
