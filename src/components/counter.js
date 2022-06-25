@@ -1,6 +1,15 @@
 import React, { Component } from "react";
 
 class Counter extends Component {
+  componentDidUpdate(prevProps, prevState){
+    console.log("PrevProps" , prevProps);
+    console.log("PrevState" , prevState);
+    if(prevProps.item.value !== this.props.item.value){
+      // ajax call and get  new data from the server
+    }
+
+
+  }
 // constructor () {
 //   super()
 //   this.handleInc = this.handleInc.bind(this)

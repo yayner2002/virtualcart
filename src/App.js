@@ -25,11 +25,11 @@ class App extends Component {
       },
     ],
   };
-  // constructor(props){
-  //   super(props);
-  //   console.log("App - constructor");
-  //   this.state = this.props.state;
-  // }
+  constructor(props){
+    super(props);
+    console.log("App - constructor");
+    // this.state = this.props.state;
+  }
   componentDidMount() {
     //called after the component is rendered, and we can make an ajax call
     console.log("App - mounted");
