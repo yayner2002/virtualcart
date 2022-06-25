@@ -1,6 +1,7 @@
 import React from "react";
 
 const NavBar = ({totalNumOfItems}) => {
+  console.log("Navbar -rendered");
     return ( 
         <nav class="navbar bg-light">
         <div class="container-fluid">

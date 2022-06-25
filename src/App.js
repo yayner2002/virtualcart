@@ -25,6 +25,15 @@ class App extends Component {
       },
     ],
   };
+  // constructor(props){
+  //   super(props);
+  //   console.log("App - constructor");
+  //   this.state = this.props.state;
+  // }
+  componentDidMount() {
+    //called after the component is rendered, and we can make an ajax call
+    console.log("App - mounted");
+  }
   handleIncrement = (counter) => {
     const items = [...this.state.items];
     const indexOfItemTOInc = items.indexOf(counter);
@@ -46,6 +55,7 @@ class App extends Component {
     this.setState({ items: itemsAfterDelete });
   };
   render() { 
+    console.log("App -rendered");
     return (<React.Fragment>
       <NavBar totalNumOfItems={this.state.items.filter(item => item.value > 0).length} />
       <main className="container">
